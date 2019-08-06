@@ -4,6 +4,7 @@ import { IonicPage } from 'ionic-angular';
 import { ProductDetailProvider } from "../../providers/product-detail/product-detail";
 import { DetailProductPage } from "../detail-product/detail-product";
 import { NavController } from 'ionic-angular';
+
 @IonicPage()
 @Component({
   selector: 'page-list-product',
@@ -21,7 +22,7 @@ export class ListProductPage implements OnInit {
     centeredSlides: true
   };
 
-  constructor(private productDetailProvider: ProductDetailProvider, public navCtrl: NavController) { }
+  constructor( private productDetailProvider: ProductDetailProvider, public navCtrl: NavController) { }
 
   ngOnInit() {
     this.items = this.productDetailProvider.getProducts();
@@ -29,19 +30,14 @@ export class ListProductPage implements OnInit {
   }
 
   addToCart(product) {
-    this.productDetailProvider.addProduct(product); 
+    this.productDetailProvider.addProduct(product);
   }
 
   openCart() {
-     /* this.router.navigate(['productDetail']); */
+    /* this.router.navigate(['productDetail']); */
   }
 
-  openDetailProduct(product){
-    console.log(product)
-    this.navCtrl.push(DetailProductPage);
-
+  openDetailProduct(product) {
+    this.navCtrl.push(DetailProductPage, product);
   }
-
-
-
 }
