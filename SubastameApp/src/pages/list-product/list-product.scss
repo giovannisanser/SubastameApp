@@ -19,8 +19,16 @@
 }
 .ion-page.show-page {
   opacity: 1;
-  background-color: white;
+  background-color: #FFF;
 }
 .imagen {
   border-radius:150px;
+}
+
+ion-card-header {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: rgb(4, 3, 14);
 }
