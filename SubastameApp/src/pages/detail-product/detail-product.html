@@ -10,16 +10,15 @@
     <ion-title>Descripción</ion-title>
   </ion-navbar>
 </ion-header>
-
-
-    <ion-card>
-        <img  src="https://img.mobiscroll.com/demos/angrybirds.png" />
+<ion-content padding>
+    <ion-card *ngFor="let item of productDescription" >
+        <img  src="{{item.image}}" />
         <ion-card-header>
-          <ion-card-subtitle>Destination</ion-card-subtitle>
-          <ion-card-title>Madison, WI</ion-card-title>
+          <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
+          <ion-card-title>{{item.price}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+          {{item.id}}
         </ion-card-content>
       </ion-card>
 
