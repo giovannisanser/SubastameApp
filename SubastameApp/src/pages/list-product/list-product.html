@@ -1,7 +1,8 @@
+<ion-content padding class="bg-image" >  
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Shopping
+      Tienda
     </ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="openCart()">
@@ -12,7 +13,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<br>
+<br>
+
   <div *ngFor="let cat of items" class="category-block">
     <ion-row no-padding class="category-banner">
       <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
@@ -28,8 +31,8 @@
               <ion-card-title>
                 {{ product.name }} - ${{ product.price }}
               </ion-card-title>
-              <ion-card-content >
-                <img class="imagen" src="{{product.image}}"  (click)="openDetailProduct(product)">
+              <ion-card-content>
+                <img class="imagen" src="{{product.image}}" (click)="openDetailProduct(product)">
                 <ion-button expand="full" (click)="addToCart(product)">Add to Cart</ion-button>
               </ion-card-content>
             </ion-card-header>
